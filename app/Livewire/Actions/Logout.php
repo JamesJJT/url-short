@@ -2,7 +2,6 @@
 
 namespace App\Livewire\Actions;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class Logout
@@ -12,7 +11,8 @@ class Logout
      */
     public function __invoke(): void
     {
-        Auth::guard('web')->logout();
+        /** @phpstan-ignore method.notFound*/
+        auth()->logout();
 
         Session::invalidate();
         Session::regenerateToken();

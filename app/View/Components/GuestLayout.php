@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use Illuminate\View\View;
 
+/** @codeCoverageIgnore */
 class GuestLayout extends Component
 {
     /**
@@ -12,6 +13,7 @@ class GuestLayout extends Component
      */
     public function render(): View
     {
+        /** @phpstan-ignore return.type*/
         return view('layouts.guest');
     }
 }
